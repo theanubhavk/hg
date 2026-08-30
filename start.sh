@@ -1,6 +1,9 @@
 #!/bin/sh
 
 # 1. Start Honeygain in the background
+
+/app/honeygain -tou-get
+
 # (Make sure to pass your variables from Render's Environment Variables tab)
 /app/honeygain -tou-accept -email "$HG_EMAIL" -pass "$HG_PASSWORD" -device "$HG_DEVICE" &
 
