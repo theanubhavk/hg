@@ -1,7 +1,6 @@
-# Start with the official Honeygain image
 FROM honeygain/honeygain:latest
 
-# Switch to root to install python (assuming the base image is Ubuntu/Debian based)
+# Switch to root to install python
 USER root
 RUN apt-get update && apt-get install -y python3
 
@@ -12,5 +11,8 @@ RUN chmod +x /start.sh
 # Tell Render to expose port 10000
 EXPOSE 10000
 
-# Run the script
+# CLEAR the default Honeygain entrypoint so our script runs
+ENTRYPOINT []
+
+# Run the custom script
 CMD ["/start.sh"]
